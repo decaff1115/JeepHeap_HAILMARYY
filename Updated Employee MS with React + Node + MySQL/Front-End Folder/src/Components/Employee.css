@@ -1,0 +1,211 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url(../assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+
+
+.employeeBg {
+    background: url('../src/assets/Cmainbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+
+.empHeader {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    height: auto;
+
+}
+
+.clientLogo {
+    padding-right: 10px;
+    height: 60px;
+    padding-left: 20px;
+
+}
+
+.coop-name {
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    font-size: x-large;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+
+.pageName {
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    font-size: xx-large;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.userUser {
+    float: right;
+    display: flex;
+    background-color: transparent;
+    margin: auto;
+    margin-right: 8px;
+
+
+}
+
+
+.userDetails {
+    margin: 0px;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    font-size: large;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+
+.userName {
+    background-color: transparent;
+    padding: 5px;
+
+}
+
+
+.userRole {
+    background-color: transparent;
+    padding: 5px;
+    font-weight: 700;
+}
+
+
+
+
+.userProf {
+    margin-top: 7.5px;
+    width: fit-content;
+    height: 60px;
+    padding-left: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.salaryMenu {
+    margin: 15px;
+    display: flex;
+    color: white;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+
+
+}
+
+.salaryInfo {
+    padding: 5px;
+    flex: 1;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+
+.menuButton1 {
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 115px;
+    height: 42px;
+    background: #46e2cb;
+    border-radius: 10px;
+    color: #2B2E4A;
+    border-width: 0px;
+    margin-right: 20px;
+}
+
+.menuButton2 {
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 115px;
+    height: 42px;
+    background: #d35353;
+    border-radius: 10px;
+    color: #2B2E4A;
+    border-width: 0px;
+    margin-right: 20px;
+}
+
+.menuButton:hover {
+    box-shadow: 0 0 5px #1AE1C4, 0 0 20px #2B2E4A;
+}
+
+.addRem {
+    font-weight: 600;
+    color: #FFFFFF;
+    font-size: x-large;
+    text-align: center;
+}
+
+.tripDetails {
+    display: flex;
+    margin: 10px;
+
+}
+
+.tripDetails label {
+    color: white;
+
+}
+
+.jeepNum,
+.tripNum,
+.dateTime {
+    margin: 10px;
+    flex: 1;
+
+}
+
+.outSide {
+    display: flex;
+}
+
+.pesoInp {
+    flex: 1;
+
+}
+
+.pesoInp label {
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+.addRemButton {
+
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 200px;
+    height: 42px;
+    background: #46e2cb;
+    border-radius: 10px;
+    color: #2B2E4A;
+    border-width: 0px;
+
+    margin-left: auto;
+
+
+}

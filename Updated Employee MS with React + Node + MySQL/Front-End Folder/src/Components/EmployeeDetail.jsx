@@ -1,4 +1,9 @@
 import axios from 'axios'
+
+import './Employee.css'
+import clientLogo from "../assets/dummyCoop.png";
+import profile from "../assets/profile.png";
+
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 const EmployeeDetail = () => {
@@ -94,182 +99,233 @@ const EmployeeDetail = () => {
     };
 
     return (
-        <div>
-            <div className="p-2 d-flex justify-content-center shadow">
-                <h4>JeepHeap</h4>
+        <div className="employeeBg">
+            <div className="empHeader">
+
+                <div className="clientLogo">
+                    <img className="clientLogo" src={clientLogo} alt="Logo" />
+                </div>
+                <div className="coop-name">
+                    <h4>Lorem Transport Coop</h4>
+                </div>
+                <div className='pageName'>
+                    <h2>Encode</h2>
+                </div>
+                <div className='userUser'>
+                    <div className='userDetails'>
+                        <div className='userName'>
+
+
+                            <h5>Cashier: {employee.name}</h5>
+                        </div>
+                        <div className='userRole'>
+                            <h5>Email: {employee.email}</h5>
+                        </div>
+
+
+                    </div>
+                    <div className="userProf">
+                        <img className="userProf" src={profile} alt="Logo" />
+                    </div>
+                </div>
+
             </div>
-            <div className='d-flex justify-content-center flex-column align-items-center mt-3'>
-                <div className='d-flex align-items-center flex-column mt-5'>
-                    <h3>Cashier Name: {employee.name}</h3>
-                    <h3>Email: {employee.email}</h3>
-                    <h3>Salary: Php {employee.salary}</h3>
+            <div className='salaryMenu'>
+                <div className='salaryInfo'>
+                    Salary: Php {employee.salary}
+                </div>
+                <div className='menuButtons'>
+                    <button className='menuButton1'>Edit</button>
                 </div>
                 <div>
-                    <button className='btn btn-primary me-2'>Edit</button>
-                    <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
+                    <button className='menuButton2' onClick={handleLogout}>Logout</button>
                 </div>
             </div>
+
             <div>
-                <h3 className="text-center">Add Remittance:</h3>
-                <form onSubmit={handleSubmit}>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="jeep_id" className="form-label">
-                            Jeepney Number
-                        </label>
-                        <select
-                            name="jeep_id"
-                            id="jeep_id"
-                            className="form-select"
-                            onChange={handleJeepIdChange}
-                            value={selectedJeepId}
-                        >
-                            {jeep_id.map((c) => {
-                                return <option value={c.id}>{c.route_code}</option>;
-                            })}
-                        </select>
-                    </div>
+                <div className='addRem'>
+                    ADD REMITTANCE
+                </div>
 
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="trip_no" className="form-label">Trip Number</label>
-                        <input
-                            type="text"
-                            id="trip_no"
-                            name="trip_no"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, trip_no: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="date_time" className="form-label">Date and Time</label>
-                        <input
-                            type="datetime-local"
-                            id="date_time"
-                            name="date_time"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, date_time: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_1000s" className="form-label">P 1000s</label>
-                        <input
-                            type="text"
-                            id="p_1000s"
-                            name="p_1000s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_1000s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    {/* Similar input fields for other denominations */}
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_500s" className="form-label">P 500s</label>
-                        <input
-                            type="text"
-                            id="p_500s"
-                            name="p_500s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_500s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_200s" className="form-label">P 200s</label>
-                        <input
-                            type="text"
-                            id="p_200s"
-                            name="p_200s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_200s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_100s" className="form-label">P 100s</label>
-                        <input
-                            type="text"
-                            id="p_100s"
-                            name="p_100s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_100s: e.target.value })}
-                            required
-                        />
-                    </div>
+                <div className="formInput">
+                    <form onSubmit={handleSubmit}>
 
 
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_50s" className="form-label">P 50s</label>
-                        <input
-                            type="text"
-                            id="p_50s"
-                            name="p_50s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_50s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_20s" className="form-label">P 20s</label>
-                        <input
-                            type="text"
-                            id="p_20s"
-                            name="p_20s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_20s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_10s" className="form-label">P 10s</label>
-                        <input
-                            type="text"
-                            id="p_10s"
-                            name="p_10s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_10s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_5s" className="form-label">P 5s</label>
-                        <input
-                            type="text"
-                            id="p_5s"
-                            name="p_5s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_5s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_1s" className="form-label">P 1s</label>
-                        <input
-                            type="text"
-                            id="p_1s"
-                            name="p_1s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_1s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <label htmlFor="p_0_25s" className="form-label">P 0.25s</label>
-                        <input
-                            type="text"
-                            id="p_0_25s"
-                            name="p_0_25s"
-                            className="form-control"
-                            onChange={(e) => setRemittance({ ...remittance, p_0_25s: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="col-md-3 offset-md-4">
-                        <button type="submit" className="btn btn-primary w-100">
-                            Add Remittance
-                        </button>
-                    </div>
-                </form>
+                        <div className='tripDetails'>
+                            <div className="jeepNum ">
+                                <label htmlFor="jeep_id" className="form-label">
+                                    Jeepney Number
+                                </label>
+                                <select
+                                    name="jeep_id"
+                                    id="jeep_id"
+                                    className="form-select"
+                                    onChange={handleJeepIdChange}
+                                    value={selectedJeepId}
+                                >
+                                    {jeep_id.map((c) => {
+                                        return <option value={c.id}>{c.route_code}</option>;
+                                    })}
+                                </select>
+                            </div>
+
+                            <div className="tripNum">
+                                <label htmlFor="trip_no" className="form-label">Trip Number</label>
+                                <input
+                                    type="text"
+                                    id="trip_no"
+                                    name="trip_no"
+                                    className="form-control"
+                                    onChange={(e) => setRemittance({ ...remittance, trip_no: e.target.value })}
+                                    required
+                                />
+                            </div>
+                            <div className="dateTime">
+                                <label htmlFor="date_time" className="form-label">Date and Time</label>
+                                <input
+                                    type="datetime-local"
+                                    id="date_time"
+                                    name="date_time"
+                                    className="form-control"
+                                    onChange={(e) => setRemittance({ ...remittance, date_time: e.target.value })}
+                                    required
+                                />
+                            </div>
+
+                        </div>
+
+
+                    <div className='outSide'>
+                        <div className='pesoInp'>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_1000s" className="form-label">P 1000s</label>
+                            <input
+                                type="text"
+                                id="p_1000s"
+                                name="p_1000s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_1000s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        {/* Similar input fields for other denominations */}
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_500s" className="form-label">P 500s</label>
+                            <input
+                                type="text"
+                                id="p_500s"
+                                name="p_500s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_500s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_200s" className="form-label">P 200s</label>
+                            <input
+                                type="text"
+                                id="p_200s"
+                                name="p_200s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_200s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_100s" className="form-label">P 100s</label>
+                            <input
+                                type="text"
+                                id="p_100s"
+                                name="p_100s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_100s: e.target.value })}
+                                required
+                            />
+                        </div>
+
+
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_50s" className="form-label">P 50s</label>
+                            <input
+                                type="text"
+                                id="p_50s"
+                                name="p_50s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_50s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        </div>
+
+                        <div className='pesoInp'>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_20s" className="form-label">P 20s</label>
+                            <input
+                                type="text"
+                                id="p_20s"
+                                name="p_20s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_20s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_10s" className="form-label">P 10s</label>
+                            <input
+                                type="text"
+                                id="p_10s"
+                                name="p_10s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_10s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_5s" className="form-label">P 5s</label>
+                            <input
+                                type="text"
+                                id="p_5s"
+                                name="p_5s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_5s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_1s" className="form-label">P 1s</label>
+                            <input
+                                type="text"
+                                id="p_1s"
+                                name="p_1s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_1s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div className="col-md-3 offset-md-4">
+                            <label htmlFor="p_0_25s" className="form-label">P 0.25s</label>
+                            <input
+                                type="text"
+                                id="p_0_25s"
+                                name="p_0_25s"
+                                className="form-control"
+                                onChange={(e) => setRemittance({ ...remittance, p_0_25s: e.target.value })}
+                                required
+                            />
+                        </div>
+                        </div>
+                        </div>
+
+                                  
+                        <div className="container">
+                            <button type="submit" className="addRemButton">
+                                Add Remittance
+                            </button>
+                        </div>
+
+
+                    </form>
+                </div>
             </div>
         </div>
     )

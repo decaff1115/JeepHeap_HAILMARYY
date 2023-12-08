@@ -40,11 +40,11 @@ ul li :hover {
     font-family: 'League Spartan';
 }
 
-html,
+/* html,
 body {
     margin: 0;
     height: 100%;
-}
+} */
 
 .animated-gif {
     max-width: 100%;
@@ -63,72 +63,77 @@ body {
 }
 
 .logo {
-    height: 60px;
-    padding-left: 100px;
+  height: 60px;
+  padding-left: 10px; /* Adjust as needed */
 }
 
-
-
 .header {
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add this line to distribute space between logo and login buttons */
 
-    align-items: center;
-
-    margin: 30px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 30px;
-    top: 0;
+  margin: 1rem; /* Adjust margin as needed */
+  padding: 1rem; /* Adjust padding as needed */
+  top: 0;
 }
 
 button {
-    cursor: pointer;
-    border: none;
-    transition: box-shadow .3s;
+  cursor: pointer;
+  border: none;
+  transition: box-shadow 0.3s;
 }
 
 button:hover {
-    box-shadow: 0 0 5px #1AE1C4, 0 0 20px #1AE1C4;
+  box-shadow: 0 0 5px #1AE1C4, 0 0 20px #1AE1C4;
 }
 
-
 .login-container {
-    display: flex;
-    align-items: center;
-    margin-left: 500px
+  display: flex;
+  align-items: center;
 }
 
 .logInAs {
-    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #2B2E4A;
-    margin-right: 30px;
-    padding: 8px 15px;
-    background-color: #1AE1C4;
-    border-radius: 8px;
-    color: #2B2E4A;
-    display: inline-block;
+  font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold;
+  color: #2B2E4A;
+  margin-right: 1rem; /* Adjust margin as needed */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  background-color: #1AE1C4;
+  border-radius: 8px;
+  color: #2B2E4A;
+  display: inline-block;
 }
 
 .employeeButton,
 .adminButton {
-    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    width: 115px;
-    height: 42px;
-    background: #2B2E4A;
-    border-radius: 999px;
-    color: #FFFFFF;
-    border-width: 0px;
-    margin-right: 20px;
+  font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+  font-size: 1rem; /* Adjust font size as needed */
+  width: 8rem; /* Adjust width as needed */
+  height: 3rem; /* Adjust height as needed */
+  background: #2B2E4A;
+  border-radius: 999px;
+  color: #FFFFFF;
+  border-width: 0px;
+  margin-right: 1rem; /* Adjust margin as needed */
 }
 
 .wrappedButtons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: flex-start;
+  }
+
+  .login-container {
+    margin-top: 1rem; /* Add space between logo and login buttons on small screens */
+  }
+}
 
 .first-p {
     margin: 30px;
@@ -339,7 +344,7 @@ button:hover {
 
 /*Admin / Employee Login*/
 .login-page {
-    background-image: url('src/assets/loginbg.png');
+    background-image: url('../src/assets/loginbg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
