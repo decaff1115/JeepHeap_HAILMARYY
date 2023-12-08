@@ -1,0 +1,365 @@
+/* 
+.loginPage {
+    background: url('Images/employeems.jpeg');
+    background: linear-gradient(rgba(11, 11, 11, 0.5), rgba(10, 10, 10, 0.5)), url("Images/employeems.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+}
+
+.loginForm {
+    background-color: rgba(1, 32, 93, 0.6);
+    color: white;
+}
+
+ul li :hover {
+    background-color: gray;
+}
+
+.employee_image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.emp_det_image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+ */
+@font-face {
+    font-family: 'League Spartan';
+    src: url(../assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* background-color: white; */
+    font-family: 'League Spartan';
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.animated-gif {
+    max-width: 100%;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.logo {
+    height: 60px;
+    padding-left: 100px;
+}
+
+
+
+.header {
+    display: flex;
+
+    align-items: center;
+
+    margin: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 30px;
+    top: 0;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    transition: box-shadow .3s;
+}
+
+button:hover {
+    box-shadow: 0 0 5px #1AE1C4, 0 0 20px #1AE1C4;
+}
+
+
+.login-container {
+    display: flex;
+    align-items: center;
+    margin-left: 500px
+}
+
+.logInAs {
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #2B2E4A;
+    margin-right: 30px;
+    padding: 8px 15px;
+    background-color: #1AE1C4;
+    border-radius: 8px;
+    color: #2B2E4A;
+    display: inline-block;
+}
+
+.employeeButton,
+.adminButton {
+    font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 115px;
+    height: 42px;
+    background: #2B2E4A;
+    border-radius: 999px;
+    color: #FFFFFF;
+    border-width: 0px;
+    margin-right: 20px;
+}
+
+.wrappedButtons {
+    display: flex;
+    align-items: center;
+}
+
+
+.first-p {
+    margin: 30px;
+    padding: 30px;
+    padding-right: 0px;
+    margin-right: 0px;
+    display: flex;
+    /* height: 100vw;this is wht moved the div */
+}
+
+.first-left {
+    margin: 30px;
+    width: 60%;
+    padding: 60px;
+    padding-bottom: 150px;
+}
+
+
+.first-left h1 {
+    font-weight: 500;
+    font-size: 6vw;
+    padding-top: 10px;
+    color: #2B2E4A;
+    padding-bottom: 20px;
+}
+
+.first-left h1 b {
+    color: #1AE1C4;
+}
+
+.first-left p {
+    text-align: justify;
+    width: 80%;
+    font-size: 1.5vw;
+    padding-right: 60px;
+}
+
+.first-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-right img {
+    width: 100%;
+    height: auto;
+}
+
+.custom-shape-divider-bottom-1698067825 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1698067825 .shape-fill {
+    fill: #1AE1C4;
+}
+
+.custom-shape-divider-top-1698329915 {
+    position: absolute;
+    top: 1850px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    height: 10vw;
+}
+
+.custom-shape-divider-top-1698329915 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 200px;
+}
+
+.custom-shape-divider-top-1698329915 .shape-fill {
+    fill: #1AE1C4;
+}
+
+.second-p {
+    background-color: #1AE1C4;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    margin-top: -30px;
+}
+
+.second-left {
+    background-color: #1AE1C4;
+    margin: 30px;
+    margin-left: 0px;
+    width: 40%;
+}
+
+.second-left img {
+    padding-top: 100px;
+    max-width: 100%;
+    height: auto;
+    background-color: #1AE1C4;
+}
+
+.second-right {
+    background-color: #1AE1C4;
+    margin: 30px;
+    width: 50%;
+    padding: 60px;
+
+}
+
+.second-right h1 b {
+    color: #1A3D5B;
+    background-color: #1AE1C4;
+}
+
+.second-right h1 {
+    background-color: #1AE1C4;
+    color: white;
+    font-weight: 500;
+    font-size: 6vw;
+    padding-top: 100px;
+}
+
+
+.second-right p {
+    background-color: #1AE1C4;
+    text-align: justify;
+    width: 80%;
+    font-size: 1.5vw;
+    padding-right: 50px;
+}
+
+
+.third-p {
+    width: 100%;
+    height: 600px;
+    padding-right: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+
+.third-left {
+    margin: 20px;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 60px;
+}
+
+.third-left h1 {
+    font-weight: 500;
+    font-size: 4vw;
+    padding-top: 150px;
+    padding-left: 60px;
+    color: #2B2E4A;
+    padding-bottom: 20px;
+}
+
+
+.footer {
+    background: linear-gradient(to right, #007bff, #00dbde);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    margin: 10px;
+    margin-left: 40px;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons img {
+    height: 40px;
+    width: 40px;
+    margin: 0 5px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Admin / Employee Login*/
+.login-page {
+    background-image: url('src/assets/loginbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.loginForm h2 {
+    color: #FFFFFF
+}
+
+.login-page button {
+    background-color: #1AE1C4;
+    color: #2B2E4A;
+    font-weight: 700;
+}
+
+.login-page button:hover {
+    background-color: #2B2E4A;
+}
+
+label {
+    color: #FFFFFF
+}
