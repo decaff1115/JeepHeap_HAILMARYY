@@ -363,3 +363,7 @@ button:hover {
 label {
     color: #FFFFFF
 }
+
+.form-label{
+    color:black;
+}
