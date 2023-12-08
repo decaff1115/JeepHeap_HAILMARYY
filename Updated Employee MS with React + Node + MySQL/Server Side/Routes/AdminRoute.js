@@ -10,7 +10,11 @@ const router = express.Router();
 router.post("/adminlogin", (req, res) => {
   const sql = "SELECT * from admin Where email = ? and password = ?";
   con.query(sql, [req.body.email, req.body.password], (err, result) => {
-    if (err) return res.json({ loginStatus: false, Error: "Query error" });
+    
+    
+    if (err) return res.json({ loginStatus: false, Error: "Query error" + err + JSON.stringify(req.body)});
+
+
     if (result.length > 0) {
       const email = result[0].email;
       const token = jwt.sign(
@@ -42,21 +46,6 @@ router.post('/add_category', (req, res) => {
     })
 })
 
-// image upload 
-
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, 'Public/Images')
-//     },
-//     filename: (req, file, cb) => {
-//         cb(null, file.fieldname + "_" + Date.now() + path.extname(file.originalname))
-//     }
-// })
-// const upload = multer({
-//     storage: storage
-// })
-
-// end imag eupload 
 
 router.post('/add_employee',
         (req, res) => {
